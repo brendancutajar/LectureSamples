@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <form id="basicDetails" onsubmit="return validateForm()">
+      <div>
+        <label for="firstName">First Name</label>
+        <input id="firstName" name="firstName" placeholder="First Name" type="text" required/>
+      </div>
+      <div>
+        <label for="lastName">Last Name</label>
+        <input id="lastName" name="lastName" placeholder="Last Name"/>
+      </div>
+      <div>
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="Date Of Birth"/>
+      </div>
+      <div>
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="telephoneNumber" required name="telephoneNumber" pattern="[0-9]{8,15}"
+            title="Phone number must contain at least 8 digits and a maximum of 15 digits"/>
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+  </body>
+
+</html>
