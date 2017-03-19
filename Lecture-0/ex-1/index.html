@@ -6,23 +6,26 @@
   </head>
 
   <body>
-    <form id="basicDetails" onsubmit="return validateForm()">
+    <form id="basicDetails" onsubmit="return validator.validateForm(this)">
       <div>
         <label for="firstName">First Name</label>
-        <input id="firstName" name="firstName" placeholder="First Name" type="text" required/>
+        <input id="firstName" name="firstName" placeholder="First Name" type="text" onkeyup="validator.isFirstNameValid(this)"/>
       </div>
       <div>
         <label for="lastName">Last Name</label>
-        <input id="lastName" name="lastName" placeholder="Last Name"/>
+        <input id="lastName" name="lastName" placeholder="Last Name" onkeyup="validator.isLastNameValid(this)"/>
       </div>
       <div>
         <label for="dateOfBirth">Date of Birth</label>
-        <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="Date Of Birth"/>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="Date Of Birth" onchange="validator.isDateValid(this)"/>
       </div>
       <div>
         <label for="phoneNumber">Phone Number</label>
-        <input type="tel" id="telephoneNumber" required name="telephoneNumber" pattern="[0-9]{8,15}"
-            title="Phone number must contain at least 8 digits and a maximum of 15 digits"/>
+        <input type="tel" id="telephoneNumber" name="telephoneNumber" onkeyup="validator.isNumberValid(this)"/>
+      </div>
+      <div>
+        <label for="mood">Mood</label>
+        <input type="range" id="mood" name="mood" onchange="validator.isMoodAllowed(this)"/>
       </div>
       <div>
         <button>Submit</button>
